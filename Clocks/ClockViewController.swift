@@ -58,6 +58,10 @@ class ClockViewController : ViewController
         return is24HourMode ? "HH:mm" : "hh:mm"
     }
     
+    @IBAction func onSettingsButton(_ sender: Any) {
+        performSegue(withIdentifier: "SettingsSegue", sender: self)
+    }
+    
     func setFont(label : UILabel?)
     {
         if (useBold) {

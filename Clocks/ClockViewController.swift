@@ -8,8 +8,13 @@
 
 import UIKit
 		
-class ClockViewController : ViewController
+class ClockViewController : ViewController, ClockConfigurableProtocol
 {
+    func onConfigurationChanged(Configuration: ClockConfigurationProtocol) {
+        self.is24HourMode = Configuration.Is24HourMode;
+        self.useBold = Configuration.UseBold;       
+    }
+    
     var timer : Timer?
     var is24HourMode = false;
     var formatter = DateFormatter();
@@ -70,8 +75,16 @@ class ClockViewController : ViewController
             label?.font = label?.font.regular()
         }
     }
-
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if (segue.identifier == "SettingsSegue")
+           {
+               if let clockConfigurable = segue.destination as? ClockConfigurableProtocol {
+                    clockConfigurable.onConfigurationChanged(Configuration: ClockConfiguration(Is24HourMode: is24HourMode, UseBold: useBold));
+                   
+               }
+           }
+       }
 }
 
 extension UIFont {

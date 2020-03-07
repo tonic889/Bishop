@@ -15,11 +15,13 @@
 		D626DF6123DD2D0C005B91C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D626DF6023DD2D0C005B91C9 /* Assets.xcassets */; };
 		D626DF6423DD2D0C005B91C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D626DF6223DD2D0C005B91C9 /* LaunchScreen.storyboard */; };
 		D626DF6E23DD2EAA005B91C9 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D626DF6D23DD2EAA005B91C9 /* ClockViewController.swift */; };
+		D6283F072411DCFA00A3CD20 /* ClockConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6283F062411DCFA00A3CD20 /* ClockConfigurationProtocol.swift */; };
+		D6283F0B2411ECCD00A3CD20 /* ClockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6283F0A2411ECCD00A3CD20 /* ClockConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D612E755240F53B400002A61 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		D626DF5423DD2D09005B91C9 /* Clocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D626DF5423DD2D09005B91C9 /* Just A Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just A Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D626DF5723DD2D09005B91C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D626DF5923DD2D09005B91C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D626DF5B23DD2D09005B91C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		D626DF6323DD2D0C005B91C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D626DF6523DD2D0C005B91C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D626DF6D23DD2EAA005B91C9 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
+		D6283F062411DCFA00A3CD20 /* ClockConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockConfigurationProtocol.swift; sourceTree = "<group>"; };
+		D6283F0A2411ECCD00A3CD20 /* ClockConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,7 @@
 		D626DF5523DD2D09005B91C9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D626DF5423DD2D09005B91C9 /* Clocks.app */,
+				D626DF5423DD2D09005B91C9 /* Just A Clock.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +73,8 @@
 				D626DF6523DD2D0C005B91C9 /* Info.plist */,
 				D626DF6D23DD2EAA005B91C9 /* ClockViewController.swift */,
 				D612E755240F53B400002A61 /* SettingsViewController.swift */,
+				D6283F062411DCFA00A3CD20 /* ClockConfigurationProtocol.swift */,
+				D6283F0A2411ECCD00A3CD20 /* ClockConfiguration.swift */,
 			);
 			path = Clocks;
 			sourceTree = "<group>";
@@ -90,7 +96,7 @@
 			);
 			name = Clocks;
 			productName = Clocks;
-			productReference = D626DF5423DD2D09005B91C9 /* Clocks.app */;
+			productReference = D626DF5423DD2D09005B91C9 /* Just A Clock.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,6 +153,8 @@
 				D626DF5C23DD2D09005B91C9 /* ViewController.swift in Sources */,
 				D626DF5823DD2D09005B91C9 /* AppDelegate.swift in Sources */,
 				D626DF6E23DD2EAA005B91C9 /* ClockViewController.swift in Sources */,
+				D6283F072411DCFA00A3CD20 /* ClockConfigurationProtocol.swift in Sources */,
+				D6283F0B2411ECCD00A3CD20 /* ClockConfiguration.swift in Sources */,
 				D612E756240F53B500002A61 /* SettingsViewController.swift in Sources */,
 				D626DF5A23DD2D09005B91C9 /* SceneDelegate.swift in Sources */,
 			);
@@ -298,8 +306,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tonic889.Clocks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
+				PRODUCT_NAME = "Just A Clock";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -315,8 +324,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tonic889.Clocks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
+				PRODUCT_NAME = "Just A Clock";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

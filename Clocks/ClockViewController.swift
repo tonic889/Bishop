@@ -7,7 +7,7 @@
 //
 
 import UIKit
-		
+
 class ClockViewController : ViewController, ClockConfigurableProtocol
 {
     func onConfigurationChanged(Configuration: ClockConfigurationProtocol) {
@@ -21,7 +21,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     var useBold = false;
     
     @IBOutlet weak var meridiemLabel: UILabel!
-    {
+        {
         didSet
         {
             meridiemLabel?.text = GetMeridiemString(aDate: Date())
@@ -44,11 +44,12 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     }
     @IBOutlet weak var displayDate: UILabel!
         {
-            didSet
-            {
-                setFont(label: displayDate)
-                timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateDisplayDate), userInfo: nil, repeats: true)
-            }
+        didSet
+        {
+            setFont(label: displayDate)
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateDisplayDate), userInfo: nil, repeats: true)
+            UIApplication.shared.isIdleTimerDisabled = true;
+        }
     }
     
     @objc func updateDisplayDate()
@@ -77,14 +78,14 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if (segue.identifier == "SettingsSegue")
-           {
-               if let clockConfigurable = segue.destination as? ClockConfigurableProtocol {
-                    clockConfigurable.onConfigurationChanged(Configuration: ClockConfiguration(Is24HourMode: is24HourMode, UseBold: useBold));
-                   
-               }
-           }
-       }
+        if (segue.identifier == "SettingsSegue")
+        {
+            if let clockConfigurable = segue.destination as? ClockConfigurableProtocol {
+                clockConfigurable.onConfigurationChanged(Configuration: ClockConfiguration(Is24HourMode: is24HourMode, UseBold: useBold));
+                
+            }
+        }
+    }
 }
 
 extension UIFont {
@@ -98,9 +99,9 @@ extension UIFont {
         return withTraits(traits:.traitBold)
     }
     func regular() -> UIFont {
-      return withTraits()
+        return withTraits()
         
     }
-
+    
 }
 

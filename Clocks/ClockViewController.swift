@@ -43,9 +43,10 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         
     }
     @IBOutlet weak var displayDate: UILabel!
-        {
+    {
         didSet
         {
+            updateDisplayDate();
             setFont(label: displayDate)
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateDisplayDate), userInfo: nil, repeats: true)
             UIApplication.shared.isIdleTimerDisabled = true;
@@ -56,7 +57,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     {
         formatter.dateFormat = GetDateFormat()
         displayDate.text = formatter.string(from: Date())
-        meridiemLabel.text = GetMeridiemString(aDate: Date())
+        meridiemLabel?.text = GetMeridiemString(aDate: Date())
     }
     
     func  GetDateFormat() -> String

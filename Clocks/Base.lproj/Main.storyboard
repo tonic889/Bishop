@@ -27,8 +27,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syf-Ok-9iX">
-                                <rect key="frame" x="174" y="0.0" width="66" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syf-Ok-9iX">
+                                <rect key="frame" x="171" y="0.0" width="66" height="56"/>
                                 <state key="normal" image="Settings"/>
                                 <connections>
                                     <action selector="onSettingsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eg-24-Dln"/>
@@ -41,6 +41,7 @@
                             <constraint firstItem="gFS-4y-gje" firstAttribute="top" secondItem="kry-oR-0fA" secondAttribute="bottom" id="M4S-Aj-E0B"/>
                             <constraint firstItem="kry-oR-0fA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="UmP-cq-5C9"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azB-ET-viW"/>
+                            <constraint firstItem="syf-Ok-9iX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cYv-3p-d92"/>
                             <constraint firstItem="syf-Ok-9iX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lTb-2Q-9a1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -64,66 +65,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lgf-bb-6hJ">
-                                <rect key="frame" x="142" y="168" width="130" height="32"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segments>
-                                    <segment title="12"/>
-                                    <segment title="24"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="on24HourModeChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="Tdv-Aj-P4k"/>
-                                </connections>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-GZ-6LE">
                                 <rect key="frame" x="62" y="387" width="291" height="68"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="100" maxX="75" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Return to Clock" image="Accept"/>
                                 <connections>
                                     <action selector="onAcceptSettings:" destination="mns-gD-yk1" eventType="touchUpInside" id="Mbb-gp-0DC"/>
                                     <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ClockSegue" id="4ts-eh-dbZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-J6-yuG">
-                                <rect key="frame" x="183" y="779" width="48" height="29"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-Cc-jfa">
+                                <rect key="frame" x="174" y="0.0" width="66" height="56"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-J6-yuG">
+                                <rect key="frame" x="175.5" y="779" width="63.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-Cc-jfa">
-                                <rect key="frame" x="174" y="0.0" width="66" height="56"/>
-                            </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="osy-qg-Wxs">
-                                <rect key="frame" x="142" y="254" width="130" height="32"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segments>
-                                    <segment title="Plain"/>
-                                    <segment title="Bold"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onUseBoldChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="VBD-BR-8rU"/>
-                                </connections>
-                            </segmentedControl>
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-Tv-3Cq">
+                                <rect key="frame" x="152" y="254.65419640659616" width="99" height="137"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lgf-bb-6hJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="32"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="12"/>
+                                            <segment title="24"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="on24HourModeChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="Tdv-Aj-P4k"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="osy-qg-Wxs">
+                                        <rect key="frame" x="0.0" y="106" width="99" height="32"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="Plain"/>
+                                            <segment title="Bold"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="onUseBoldChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="VBD-BR-8rU"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="top" secondItem="aX1-RZ-pz1" secondAttribute="top" id="17E-u6-9gk"/>
-                            <constraint firstItem="osy-qg-Wxs" firstAttribute="centerX" secondItem="ctZ-J6-yuG" secondAttribute="centerX" id="1We-rM-Uxe"/>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="3D0-xS-YS2"/>
-                            <constraint firstItem="osy-qg-Wxs" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="Bbs-pX-NZQ"/>
-                            <constraint firstItem="Bjl-GZ-6LE" firstAttribute="leading" secondItem="aX1-RZ-pz1" secondAttribute="leading" constant="62" id="IHn-he-L6C"/>
-                            <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerX" secondItem="osy-qg-Wxs" secondAttribute="centerX" id="J7B-2g-rRA"/>
-                            <constraint firstItem="osy-qg-Wxs" firstAttribute="leading" secondItem="lgf-bb-6hJ" secondAttribute="leading" id="Njj-hD-nhY"/>
-                            <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerY" secondItem="zsf-1M-FrG" secondAttribute="centerY" id="aNy-Gn-Nve"/>
-                            <constraint firstItem="lgf-bb-6hJ" firstAttribute="top" secondItem="zsf-1M-FrG" secondAttribute="top" constant="168" id="c1L-e3-xHO"/>
-                            <constraint firstItem="lgf-bb-6hJ" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="eoe-Q6-4rd"/>
+                            <constraint firstItem="ctZ-J6-yuG" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="EuY-hY-H3i"/>
+                            <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="IHn-he-L6C"/>
                             <constraint firstItem="ctZ-J6-yuG" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="iaN-dx-1qy"/>
-                            <constraint firstItem="osy-qg-Wxs" firstAttribute="top" secondItem="lgf-bb-6hJ" secondAttribute="bottom" constant="55" id="uby-0y-X1Z"/>
-                            <constraint firstItem="osy-qg-Wxs" firstAttribute="leading" secondItem="aX1-RZ-pz1" secondAttribute="leading" constant="142" id="y0n-uR-Y1S"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="top" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.16" id="lbn-eH-zCU"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.33" id="upT-xA-B8P"/>
+                            <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="centerY" id="wUt-v6-yww"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="zMJ-eG-cQI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aX1-RZ-pz1"/>
                     </view>

@@ -17,6 +17,10 @@
 		D626DF6E23DD2EAA005B91C9 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D626DF6D23DD2EAA005B91C9 /* ClockViewController.swift */; };
 		D6283F072411DCFA00A3CD20 /* ClockConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6283F062411DCFA00A3CD20 /* ClockConfigurationProtocol.swift */; };
 		D6283F0B2411ECCD00A3CD20 /* ClockConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6283F0A2411ECCD00A3CD20 /* ClockConfiguration.swift */; };
+		D63E2EC22426B4D200BAE427 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC12426B4D100BAE427 /* SF-Pro-Display-Light.otf */; };
+		D63E2EC52426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC42426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf */; };
+		D63E2EC72426B50900BAE427 /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */; };
+		D63E2EC92426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		D626DF6D23DD2EAA005B91C9 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		D6283F062411DCFA00A3CD20 /* ClockConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockConfigurationProtocol.swift; sourceTree = "<group>"; };
 		D6283F0A2411ECCD00A3CD20 /* ClockConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockConfiguration.swift; sourceTree = "<group>"; };
+		D63E2EC12426B4D100BAE427 /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		D63E2EC42426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
+		D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-HeavyItalic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		D626DF5623DD2D09005B91C9 /* Clocks */ = {
 			isa = PBXGroup;
 			children = (
+				D63E2EC32426B4DD00BAE427 /* Fonts */,
 				D626DF5723DD2D09005B91C9 /* AppDelegate.swift */,
 				D626DF5923DD2D09005B91C9 /* SceneDelegate.swift */,
 				D626DF5B23DD2D09005B91C9 /* ViewController.swift */,
@@ -77,6 +86,17 @@
 				D6283F0A2411ECCD00A3CD20 /* ClockConfiguration.swift */,
 			);
 			path = Clocks;
+			sourceTree = "<group>";
+		};
+		D63E2EC32426B4DD00BAE427 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D63E2EC42426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf */,
+				D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */,
+				D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */,
+				D63E2EC12426B4D100BAE427 /* SF-Pro-Display-Light.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +157,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D63E2EC52426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				D626DF6423DD2D0C005B91C9 /* LaunchScreen.storyboard in Resources */,
+				D63E2EC92426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				D626DF6123DD2D0C005B91C9 /* Assets.xcassets in Resources */,
+				D63E2EC72426B50900BAE427 /* SF-Pro-Display-Ultralight.otf in Resources */,
+				D63E2EC22426B4D200BAE427 /* SF-Pro-Display-Light.otf in Resources */,
 				D626DF5F23DD2D09005B91C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,7 +333,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -331,7 +355,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";

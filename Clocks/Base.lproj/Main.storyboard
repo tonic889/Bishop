@@ -6,28 +6,36 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Light.otf">
+            <string>SFProDisplay-Light</string>
+        </array>
+        <array key="SF-Pro-Display-Ultralight.otf">
+            <string>SFProDisplay-Ultralight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Clock View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="Now__Desk_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kry-oR-0fA" userLabel="Display Time">
                                 <rect key="frame" x="49" y="354" width="316" height="124"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="124"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="124"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-4y-gje" userLabel="Meridiem Label">
                                 <rect key="frame" x="171" y="486" width="72" height="49"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syf-Ok-9iX">
+                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syf-Ok-9iX">
                                 <rect key="frame" x="171" y="0.0" width="66" height="56"/>
                                 <state key="normal" image="Settings"/>
                                 <connections>
@@ -36,6 +44,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="kry-oR-0fA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5Gd-Aa-UOW"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="top" secondItem="kry-oR-0fA" secondAttribute="bottom" id="M4S-Aj-E0B"/>
@@ -45,15 +54,25 @@
                             <constraint firstItem="syf-Ok-9iX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lTb-2Q-9a1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="L2P-5L-MFT" appends="YES" id="Wc0-Qu-S3Y"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="7KI-WT-xbZ"/>
                     <connections>
                         <outlet property="displayDate" destination="kry-oR-0fA" id="y1W-dP-VSW"/>
                         <outlet property="meridiemLabel" destination="gFS-4y-gje" id="p2F-26-III"/>
-                        <segue destination="mns-gD-yk1" kind="showDetail" identifier="SettingsSegue" id="jXF-hA-fYf"/>
+                        <outlet property="settingsButton" destination="syf-Ok-9iX" id="OTh-fQ-Ef7"/>
+                        <outlet property="tapViewRecognizer" destination="L2P-5L-MFT" id="849-nh-bU7"/>
+                        <segue destination="mns-gD-yk1" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" id="jXF-hA-fYf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="L2P-5L-MFT">
+                    <connections>
+                        <action selector="tapGesture:" destination="BYZ-38-t0r" id="BI5-20-h1R"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
@@ -62,29 +81,29 @@
             <objects>
                 <viewController id="mns-gD-yk1" customClass="SettingsViewController" customModule="Now__Desk_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zsf-1M-FrG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-GZ-6LE">
                                 <rect key="frame" x="62" y="387" width="291" height="68"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
                                 <state key="normal" title="Return to Clock" image="Accept"/>
                                 <connections>
                                     <action selector="onAcceptSettings:" destination="mns-gD-yk1" eventType="touchUpInside" id="Mbb-gp-0DC"/>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="ClockSegue" id="4ts-eh-dbZ"/>
+                                    <segue destination="qFZ-Gp-iAc" kind="unwind" identifier="ClockSegue" unwindAction="myUnwindAction:" id="ctQ-TD-2ov"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-Cc-jfa">
-                                <rect key="frame" x="174" y="0.0" width="66" height="56"/>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-Cc-jfa">
+                                <rect key="frame" x="174" y="44" width="66" height="56"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-J6-yuG">
-                                <rect key="frame" x="175.5" y="779" width="63.5" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-J6-yuG">
+                                <rect key="frame" x="184.5" y="833" width="45.5" height="29"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-Tv-3Cq">
-                                <rect key="frame" x="152" y="254.65419640659616" width="99" height="137"/>
+                                <rect key="frame" x="152" y="254.65419640659616" width="99" height="146.5"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lgf-bb-6hJ">
                                         <rect key="frame" x="0.0" y="0.0" width="99" height="32"/>
@@ -100,7 +119,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="osy-qg-Wxs">
-                                        <rect key="frame" x="0.0" y="106" width="99" height="32"/>
+                                        <rect key="frame" x="0.0" y="115.5" width="99" height="32"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="Plain"/>
@@ -131,9 +150,11 @@
                     <connections>
                         <outlet property="FontStyleControl" destination="osy-qg-Wxs" id="CRm-Fb-LBI"/>
                         <outlet property="MilitaryTimeControl" destination="lgf-bb-6hJ" id="ciu-ej-Bbh"/>
+                        <outlet property="versionLabel" destination="ctZ-J6-yuG" id="TG1-lX-Xgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yq6-J0-cMp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="qFZ-Gp-iAc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="905.79710144927549" y="138.61607142857142"/>
         </scene>

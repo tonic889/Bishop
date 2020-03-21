@@ -22,10 +22,18 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
     
     
     @IBOutlet weak var MilitaryTimeControl: UISegmentedControl!
-        {
+    {
         didSet
         {
             MilitaryTimeControl.selectedSegmentIndex = is24HourMode ? 1 : 0;
+        }
+    }
+    @IBOutlet weak var versionLabel: UILabel!
+    {
+        didSet
+        {
+            versionLabel.text = "v " + (Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "0.1")
+            
         }
     }
     @IBOutlet weak var FontStyleControl: UISegmentedControl!
@@ -60,14 +68,6 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
         performSegue(withIdentifier: "ClockSegue", sender: self)
         
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+   
     
 }

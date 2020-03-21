@@ -15,17 +15,29 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         self.useBold = Configuration.UseBold;       
     }
     
+    @IBAction func myUnwindAction(_ segue: UIStoryboardSegue)
+    {
+        updateDisplayDate();
+    }
+    
     var timer : Timer?
     var is24HourMode = false;
     var formatter = DateFormatter();
     var useBold = false;
     
-    @IBOutlet weak var meridiemLabel: UILabel!
+    @IBOutlet weak var tapViewRecognizer: UITapGestureRecognizer!
+    {
+        didSet
         {
+            tapViewRecognizer?.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var meridiemLabel: UILabel!
+    {
         didSet
         {
             meridiemLabel?.text = GetMeridiemString(aDate: Date())
-            setFont(label: meridiemLabel)
         }
     }
     
@@ -42,22 +54,40 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         }
         
     }
+    @IBAction func tapGesture(_ sender: Any) {
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       options: UIView.AnimationOptions.allowUserInteraction,
+                       animations: { self.settingsButton.alpha = 1.0 },
+                       completion: { (finished) in
+                        UIView.animate(withDuration: 3.0,
+            delay: 0,
+            options: UIView.AnimationOptions.allowUserInteraction,
+            animations: { self.settingsButton.alpha = 0.1 } )
+        }
+        );
+        
+        
+    }
     @IBOutlet weak var displayDate: UILabel!
     {
         didSet
         {
             updateDisplayDate();
-            setFont(label: displayDate)
+            
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateDisplayDate), userInfo: nil, repeats: true)
             UIApplication.shared.isIdleTimerDisabled = true;
         }
     }
     
+    @IBOutlet weak var settingsButton: UIButton!
     @objc func updateDisplayDate()
     {
         formatter.dateFormat = GetDateFormat()
         displayDate.text = formatter.string(from: Date())
         meridiemLabel?.text = GetMeridiemString(aDate: Date())
+        setDisplayDateFont();
+        setMeridiemFont();
     }
     
     func  GetDateFormat() -> String
@@ -69,15 +99,24 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         performSegue(withIdentifier: "SettingsSegue", sender: self)
     }
     
-    func setFont(label : UILabel?)
+    func setDisplayDateFont()
     {
-        if (useBold) {
-            label?.font = label?.font.bold()
+       
+        if (!useBold) {
+            displayDate?.font = UIFont(name: "SFProDisplay-Ultralight", size: 124)
         } else {
-            label?.font = label?.font.regular()
+            displayDate?.font = UIFont(name: "SFProDisplay-HeavyItalic", size: 124)
         }
     }
     
+    func setMeridiemFont()
+    {
+          if (!useBold) {
+            meridiemLabel?.font = UIFont(name: "SFProDisplay-Light", size: 36)
+          } else {
+            meridiemLabel?.font = UIFont(name: "SFProDisplay-BoldItalic", size: 36)
+          }
+      }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "SettingsSegue")
         {
@@ -87,22 +126,15 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
             }
         }
     }
+    
+    
 }
 
-extension UIFont {
-    func withTraits(traits:UIFontDescriptor.SymbolicTraits...) -> UIFont {
-        let descriptor = self.fontDescriptor
-            .withSymbolicTraits(UIFontDescriptor.SymbolicTraits(traits))
-        return UIFont(descriptor: descriptor!, size: 0)
+extension ClockViewController: UIGestureRecognizerDelegate{
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive: UITouch) -> Bool {
+        //
+        return !settingsButton.frame.contains(shouldReceive.location(in: self.view));
+
     }
-    
-    func bold() -> UIFont {
-        return withTraits(traits:.traitBold)
-    }
-    func regular() -> UIFont {
-        return withTraits()
-        
-    }
-    
 }
 

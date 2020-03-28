@@ -25,9 +25,11 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     var is24HourMode = false;
     var formatter = DateFormatter();
     var useBold = false;
+    var timerFontSize = CGFloat(120);
+    var meridienFontSize = CGFloat(25);
     
     @IBOutlet weak var tapViewRecognizer: UITapGestureRecognizer!
-    {
+        {
         didSet
         {
             tapViewRecognizer?.delegate = self
@@ -35,7 +37,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     }
     
     @IBOutlet weak var meridiemLabel: UILabel!
-    {
+        {
         didSet
         {
             meridiemLabel?.text = GetMeridiemString(aDate: Date())
@@ -43,10 +45,10 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     }
     
     @IBOutlet weak var displayMinutes: UILabel!
-    {
+        {
         didSet
         {
-             updateDisplayDate();
+            updateDisplayDate();
             
         }
     }
@@ -64,12 +66,28 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         
     }
     @IBAction func tapGesture(_ sender: Any) {
-        fadeIn(fadeInCompletion : fadeOut(_:) )
+        let isAnimating = !(self.settingsSlider.layer.animationKeys()?.isEmpty ?? true)
+        if (isAnimating)
+        {
+            //self.settingsSlider.layer.removeAllAnimations()
+            //self.settingsSliderTrack.layer.removeAllAnimations()
+            UIView.animate(withDuration: 0.25,
+                           delay: 0,
+                           options: UIView.AnimationOptions.allowUserInteraction,
+                           animations: {
+                            self.settingsSliderTrack.alpha = 0.1
+                            self.settingsSlider.alpha = 0.1
+            }
+            );
+        } else
+        {
+            fadeIn(fadeInCompletion : fadeOut(_:) )
+        }
     }
     
     func fadeIn(fadeInCompletion : ((Bool) -> Void)? = nil )
     {
-      UIView.animate(withDuration: 0.25,
+        UIView.animate(withDuration: 0.25,
                        delay: 0,
                        options: UIView.AnimationOptions.allowUserInteraction,
                        animations: {
@@ -82,16 +100,16 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     func fadeOut(_ : Bool)
     {
         UIView.animate(withDuration: 3.0,
-        delay: 0,
-        options: UIView.AnimationOptions.allowUserInteraction,
-        animations: {
-            self.settingsSliderTrack.alpha = 0.1
-            self.settingsSlider.alpha = 0.1
-                    }
+                       delay: 0,
+                       options: UIView.AnimationOptions.allowUserInteraction,
+                       animations: {
+                        self.settingsSliderTrack.alpha = 0.1
+                        self.settingsSlider.alpha = 0.1
+        }
         );
     }
     @IBOutlet weak var displayHour: UILabel!
-    {
+        {
         didSet
         {
             updateDisplayDate();
@@ -124,10 +142,10 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     {
         return "mm";
     }
-
+    
     func setDisplayDateFont()
     {
-        let theFont = (!useBold) ? UIFont(name: "SFProDisplay-Ultralight", size: 124) : UIFont(name: "SFProDisplay-HeavyItalic", size: 124)
+        let theFont = (!useBold) ? UIFont(name: "SFProDisplay-Ultralight", size: timerFontSize) : UIFont(name: "SFProDisplay-HeavyItalic", size: timerFontSize)
         
         displayHour?.font = theFont;
         displayMinutes?.font = theFont;
@@ -136,19 +154,25 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     
     func setMeridiemFont()
     {
-          if (!useBold) {
-            meridiemLabel?.font = UIFont(name: "SFProDisplay-Light", size: 36)
-          } else {
-            meridiemLabel?.font = UIFont(name: "SFProDisplay-BoldItalic", size: 36)
-          }
-      }
+        if (!useBold) {
+            meridiemLabel?.font = UIFont(name: "SFProDisplay-Light", size: meridienFontSize)
+        } else {
+            meridiemLabel?.font = UIFont(name: "SFProDisplay-BoldItalic", size: meridienFontSize)
+        }
+    }
     
     @IBOutlet weak var settingsSlider: UIImageView!
+    {
+        didSet
+        {
+            settingsSlider.layer.zPosition = 1
+        }
+    }
     
     @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
-       
-        fadeIn(fadeInCompletion: nil)
-
+        
+	        fadeIn(fadeInCompletion: nil)
+        
         let buttonHeight = settingsSlider.frame.size.width / 2
         var yPos = max(gesture.location(in: view).y, gesture.view!.frame.minY) + buttonHeight
         yPos = min(yPos, gesture.view!.frame.maxY - buttonHeight)
@@ -156,15 +180,15 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         if (yPos <= gesture.view!.frame.minY + buttonHeight)
         {
             UIView.animate(withDuration: 1,
-                   delay: 0,
-                   options: UIView.AnimationOptions.allowUserInteraction,
-                   animations: {
-                    self.settingsSlider.image = UIImage(named: "SettingsSliderComplete")
-                               }
+                           delay: 0,
+                           options: UIView.AnimationOptions.allowUserInteraction,
+                           animations: {
+                            self.settingsSlider.image = UIImage(named: "SettingsSliderComplete")
+            }
                 , completion: { (finished) in
                     self.performSegue(withIdentifier: "SettingsSegue", sender: self)
                     self.fadeOut(true)
-                })
+            })
         }
         
         if (gesture.state == UIGestureRecognizer.State.ended)
@@ -176,16 +200,16 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     
     func resetSlider()
     {
-          let buttonHeight = settingsSlider.frame.size.width / 2
+        let buttonHeight = settingsSlider.frame.size.width / 2
         settingsSlider.image = UIImage(named: "SettingsSlider")
         settingsSlider.center = CGPoint(x: settingsSliderTrack.center.x, y: settingsSliderTrack.frame.maxY - buttonHeight)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "SettingsSegue")
         {
             if let clockConfigurable = segue.destination as? ClockConfigurableProtocol {
                 clockConfigurable.onConfigurationChanged(Configuration: ClockConfiguration(Is24HourMode: is24HourMode, UseBold: useBold));
-                
             }
         }
     }
@@ -204,9 +228,10 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
 
 extension ClockViewController: UIGestureRecognizerDelegate{
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive: UITouch) -> Bool {
-        //
-        return !settingsSliderTrack.frame.contains(shouldReceive.location(in: self.view));
-
+        let shouldRecognize = !settingsSliderTrack.frame.contains(shouldReceive.location(in: self.view));
+       
+        return shouldRecognize
+        
     }
 }
 

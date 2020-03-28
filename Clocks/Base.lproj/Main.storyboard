@@ -24,19 +24,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kry-oR-0fA" userLabel="Display Hour">
-                                <rect key="frame" x="67.5" y="309.5" width="110" height="143.5"/>
+                                <rect key="frame" x="52.5" y="309.5" width="110" height="143.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-TT-IeH" userLabel="Display Time Separator">
-                                <rect key="frame" x="177.5" y="301.5" width="29" height="143.5"/>
+                                <rect key="frame" x="162.5" y="301.5" width="29" height="143.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0B-jh-TSa" userLabel="Display Minutes">
-                                <rect key="frame" x="206.5" y="309.5" width="138.5" height="143.5"/>
+                                <rect key="frame" x="191.5" y="309.5" width="138.5" height="143.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -47,27 +47,41 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
-                                <rect key="frame" x="172" y="168" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
-                                </accessibility>
-                            </imageView>
-                            <imageView clipsSubviews="YES" alpha="0.10000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SettingsSliderTrack" translatesAutoresizingMaskIntoConstraints="NO" id="f1n-75-oFQ">
-                                <rect key="frame" x="172" y="44" width="60" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-qP-qB4" userLabel="Slider View">
+                                <rect key="frame" x="177" y="43" width="60" height="184"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
+                                        <rect key="frame" x="0.0" y="124" width="60" height="60"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="SettingsSliderTrack" translatesAutoresizingMaskIntoConstraints="NO" id="f1n-75-oFQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="184"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="f1n-75-oFQ" secondAttribute="width" id="Nd3-vd-qwU"/>
+                                    <constraint firstItem="c6i-VC-T9y" firstAttribute="bottom" secondItem="f1n-75-oFQ" secondAttribute="bottom" id="Phy-9p-ium"/>
+                                    <constraint firstItem="c6i-VC-T9y" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="hg3-Yc-ANZ"/>
+                                    <constraint firstAttribute="height" secondItem="f1n-75-oFQ" secondAttribute="height" id="ngM-wF-VQA"/>
+                                    <constraint firstItem="f1n-75-oFQ" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="qKQ-yf-Umd"/>
+                                </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mpZ-3O-okj" appends="YES" id="IpD-ZP-0vg"/>
+                                    <outletCollection property="gestureRecognizers" destination="XTp-G7-Mxx" appends="YES" id="Cgx-EH-5UN"/>
                                 </connections>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Jxx-qP-qB4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="12f-i6-MwR"/>
                             <constraint firstItem="P0B-jh-TSa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1So-3J-i5C"/>
-                            <constraint firstItem="Zqe-TT-IeH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-15" id="5eS-8U-T3l"/>
+                            <constraint firstItem="Zqe-TT-IeH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-30" id="5eS-8U-T3l"/>
+                            <constraint firstItem="Jxx-qP-qB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.05" id="9Rf-3v-SOP"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="M4S-Aj-E0B"/>
                             <constraint firstItem="P0B-jh-TSa" firstAttribute="left" secondItem="Zqe-TT-IeH" secondAttribute="right" id="PNG-qz-fHI"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azB-ET-viW"/>
@@ -81,6 +95,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="SliderView" destination="Jxx-qP-qB4" id="wzY-TT-LOi"/>
                         <outlet property="displayHour" destination="kry-oR-0fA" id="y1W-dP-VSW"/>
                         <outlet property="displayMinutes" destination="P0B-jh-TSa" id="nxT-oM-2CB"/>
                         <outlet property="displayTimeSeparator" destination="Zqe-TT-IeH" id="gk2-91-Zew"/>
@@ -97,9 +112,9 @@
                         <action selector="tapGesture:" destination="BYZ-38-t0r" id="BI5-20-h1R"/>
                     </connections>
                 </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="mpZ-3O-okj">
+                <panGestureRecognizer cancelsTouchesInView="NO" minimumNumberOfTouches="1" id="XTp-G7-Mxx">
                     <connections>
-                        <action selector="handlePan:" destination="BYZ-38-t0r" id="u2z-sw-OSP"/>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="aAH-pZ-JH6"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

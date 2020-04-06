@@ -23,19 +23,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kry-oR-0fA" userLabel="Display Hour">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kry-oR-0fA" userLabel="Display Hour">
                                 <rect key="frame" x="52.5" y="309.5" width="110" height="143.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-TT-IeH" userLabel="Display Time Separator">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-TT-IeH" userLabel="Display Time Separator">
                                 <rect key="frame" x="162.5" y="301.5" width="29" height="143.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0B-jh-TSa" userLabel="Display Minutes">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0B-jh-TSa" userLabel="Display Minutes">
                                 <rect key="frame" x="191.5" y="309.5" width="138.5" height="143.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,15 +48,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-qP-qB4" userLabel="Slider View">
-                                <rect key="frame" x="177" y="43" width="60" height="184"/>
+                                <rect key="frame" x="177" y="56" width="60" height="184"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
+                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
                                         <rect key="frame" x="0.0" y="124" width="60" height="60"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                         </accessibility>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="SettingsSliderTrack" translatesAutoresizingMaskIntoConstraints="NO" id="f1n-75-oFQ">
+                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsSliderTrack" translatesAutoresizingMaskIntoConstraints="NO" id="f1n-75-oFQ">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="184"/>
                                         <gestureRecognizers/>
                                     </imageView>
@@ -67,6 +67,7 @@
                                     <constraint firstAttribute="width" secondItem="f1n-75-oFQ" secondAttribute="width" id="Nd3-vd-qwU"/>
                                     <constraint firstItem="c6i-VC-T9y" firstAttribute="bottom" secondItem="f1n-75-oFQ" secondAttribute="bottom" id="Phy-9p-ium"/>
                                     <constraint firstItem="c6i-VC-T9y" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="hg3-Yc-ANZ"/>
+                                    <constraint firstItem="f1n-75-oFQ" firstAttribute="centerY" secondItem="Jxx-qP-qB4" secondAttribute="centerY" id="mAx-E4-db5"/>
                                     <constraint firstAttribute="height" secondItem="f1n-75-oFQ" secondAttribute="height" id="ngM-wF-VQA"/>
                                     <constraint firstItem="f1n-75-oFQ" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="qKQ-yf-Umd"/>
                                 </constraints>
@@ -81,7 +82,7 @@
                             <constraint firstItem="Jxx-qP-qB4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="12f-i6-MwR"/>
                             <constraint firstItem="P0B-jh-TSa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1So-3J-i5C"/>
                             <constraint firstItem="Zqe-TT-IeH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-30" id="5eS-8U-T3l"/>
-                            <constraint firstItem="Jxx-qP-qB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.05" id="9Rf-3v-SOP"/>
+                            <constraint firstItem="Jxx-qP-qB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.1" constant="-30" id="9Rf-3v-SOP"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="M4S-Aj-E0B"/>
                             <constraint firstItem="P0B-jh-TSa" firstAttribute="left" secondItem="Zqe-TT-IeH" secondAttribute="right" id="PNG-qz-fHI"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azB-ET-viW"/>
@@ -129,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsScreen" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-Cc-jfa">
-                                <rect key="frame" x="186.5" y="44" width="41" height="41"/>
+                                <rect key="frame" x="186.5" y="65.5" width="41" height="41"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-J6-yuG">
                                 <rect key="frame" x="184.5" y="833" width="45.5" height="29"/>
@@ -137,37 +138,50 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-Tv-3Cq">
-                                <rect key="frame" x="157.5" y="138" width="99" height="146.5"/>
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-Tv-3Cq">
+                                <rect key="frame" x="138" y="106.5" width="138" height="316.5"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lgf-bb-6hJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="99" height="32"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <segments>
-                                            <segment title="12"/>
-                                            <segment title="24"/>
-                                        </segments>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="on24HourModeChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="Tdv-Aj-P4k"/>
-                                        </connections>
-                                    </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="osy-qg-Wxs">
-                                        <rect key="frame" x="0.0" y="115.5" width="99" height="32"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <segments>
-                                            <segment title="Plain"/>
-                                            <segment title="Bold"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="onUseBoldChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="VBD-BR-8rU"/>
-                                        </connections>
-                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rc8-fp-o5K">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="79.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-cV-jNP" userLabel="Military Time Control" customClass="SegmentedControlView" customModule="Now__Desk_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="79.5" width="138" height="79"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="SegmentTitles" value="12;24"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="TextColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="SelectedIndicatorColor">
+                                                <color key="value" red="0.90588235294117647" green="0.54509803921568623" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YA6-cv-1lT" userLabel="Font Indicator Control" customClass="SegmentedControlView" customModule="Now__Desk_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="158.5" width="138" height="79"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="SegmentTitles" value="Plain;Bold"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="SelectedIndicatorColor">
+                                                <color key="value" red="0.90588235289999997" green="0.5450980392" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdV-dm-xce">
+                                        <rect key="frame" x="0.0" y="237.5" width="138" height="79"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-GZ-6LE">
-                                <rect key="frame" x="-30" y="418" width="474" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-GZ-6LE">
+                                <rect key="frame" x="103.5" y="423" width="207" height="60"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
                                 <inset key="titleEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Return to Clock" image="SettingsConfirm"/>
@@ -178,14 +192,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="SzR-Cc-jfa" firstAttribute="top" secondItem="aX1-RZ-pz1" secondAttribute="top" id="17E-u6-9gk"/>
+                            <constraint firstItem="SzR-Cc-jfa" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.1" id="17E-u6-9gk"/>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="3D0-xS-YS2"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="bottom" secondItem="Bjl-GZ-6LE" secondAttribute="top" id="6TV-II-eXM"/>
                             <constraint firstItem="ctZ-J6-yuG" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="EuY-hY-H3i"/>
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="IHn-he-L6C"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="0.333333" id="MNv-9X-cKN"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="top" secondItem="SzR-Cc-jfa" secondAttribute="bottom" id="P1x-lg-3x3"/>
+                            <constraint firstItem="Bjl-GZ-6LE" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="0.5" id="eUa-bG-J0y"/>
                             <constraint firstItem="ctZ-J6-yuG" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="iaN-dx-1qy"/>
-                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="top" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.16" id="lbn-eH-zCU"/>
-                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.33" id="upT-xA-B8P"/>
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="centerY" id="wUt-v6-yww"/>
                             <constraint firstItem="TdH-Tv-3Cq" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="zMJ-eG-cQI"/>
                         </constraints>
@@ -193,8 +210,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="7bo-7F-E9l"/>
                     <connections>
-                        <outlet property="FontStyleControl" destination="osy-qg-Wxs" id="CRm-Fb-LBI"/>
-                        <outlet property="MilitaryTimeControl" destination="lgf-bb-6hJ" id="ciu-ej-Bbh"/>
+                        <outlet property="FontStyleControl" destination="YA6-cv-1lT" id="7Wj-ca-VTa"/>
+                        <outlet property="MilitaryTimeControl" destination="5Q8-cV-jNP" id="XWd-qN-JmU"/>
                         <outlet property="versionLabel" destination="ctZ-J6-yuG" id="TG1-lX-Xgm"/>
                     </connections>
                 </viewController>

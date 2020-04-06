@@ -21,6 +21,7 @@
 		D63E2EC52426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC42426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf */; };
 		D63E2EC72426B50900BAE427 /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */; };
 		D63E2EC92426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */; };
+		D69E3367243148F2005BD715 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E3366243148F2005BD715 /* SegmentedControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D63E2EC42426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
 		D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-HeavyItalic.otf"; sourceTree = "<group>"; };
+		D69E3366243148F2005BD715 /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		D626DF5623DD2D09005B91C9 /* Clocks */ = {
 			isa = PBXGroup;
 			children = (
+				D69E3365243148C8005BD715 /* Controls */,
 				D63E2EC32426B4DD00BAE427 /* Fonts */,
 				D626DF5723DD2D09005B91C9 /* AppDelegate.swift */,
 				D626DF5923DD2D09005B91C9 /* SceneDelegate.swift */,
@@ -97,6 +100,14 @@
 				D63E2EC12426B4D100BAE427 /* SF-Pro-Display-Light.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D69E3365243148C8005BD715 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				D69E3366243148F2005BD715 /* SegmentedControlView.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 				D626DF6E23DD2EAA005B91C9 /* ClockViewController.swift in Sources */,
 				D6283F072411DCFA00A3CD20 /* ClockConfigurationProtocol.swift in Sources */,
 				D6283F0B2411ECCD00A3CD20 /* ClockConfiguration.swift in Sources */,
+				D69E3367243148F2005BD715 /* SegmentedControlView.swift in Sources */,
 				D612E756240F53B500002A61 /* SettingsViewController.swift in Sources */,
 				D626DF5A23DD2D09005B91C9 /* SceneDelegate.swift in Sources */,
 			);
@@ -333,7 +345,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -355,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";

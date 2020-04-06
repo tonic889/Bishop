@@ -20,41 +20,34 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBOutlet weak var MilitaryTimeControl: UISegmentedControl!
-    {
-        didSet
-        {
-            MilitaryTimeControl.selectedSegmentIndex = is24HourMode ? 1 : 0;
-        }
-    }
     @IBOutlet weak var versionLabel: UILabel!
-    {
+        {
         didSet
         {
             versionLabel.text = "v " + (Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "0.1")
             
         }
     }
-    @IBOutlet weak var FontStyleControl: UISegmentedControl!
+    
+    @IBOutlet weak var FontStyleControl: SegmentedControlView!
         {
         didSet
         {
             FontStyleControl.selectedSegmentIndex = useBold ? 1:0;
         }
     }
-    @IBAction func on24HourModeChanged(_ sender: UISegmentedControl) {
-        is24HourMode = sender.selectedSegmentIndex == 1;
+    @IBOutlet weak var MilitaryTimeControl: SegmentedControlView! {
+        didSet
+        {
+            MilitaryTimeControl.selectedSegmentIndex = is24HourMode ? 1 : 0;
+        }
     }
     
-    @IBAction func onUseBoldChanged(_ sender: UISegmentedControl) {
-        useBold = sender.selectedSegmentIndex == 1;
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ClockSegue")
         {
             if let clockConfigurable = segue.destination as? ClockConfigurableProtocol {
-                clockConfigurable.onConfigurationChanged(Configuration: ClockConfiguration(Is24HourMode: is24HourMode, UseBold: useBold));
+                clockConfigurable.onConfigurationChanged(Configuration: ClockConfiguration(Is24HourMode: MilitaryTimeControl.selectedSegmentIndex == 1, UseBold: FontStyleControl.selectedSegmentIndex == 1));
                 
             }
         }
@@ -68,6 +61,6 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
         performSegue(withIdentifier: "ClockSegue", sender: self)
         
     }
-   
+    
     
 }

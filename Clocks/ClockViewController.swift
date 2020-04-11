@@ -14,8 +14,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     var is24HourMode = false;
     var formatter = DateFormatter();
     var useBold = false;
-    var timerFontSize = CGFloat(120);
-    var meridienFontSize = CGFloat(25);
+    
     
     @IBOutlet weak var SliderView: UIView!
     @IBOutlet weak var displayTimeSeparator: UILabel!
@@ -186,7 +185,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     
     func setDisplayDateFont()
     {
-        let theFont = (!useBold) ? UIFont(name: "SFProDisplay-Ultralight", size: timerFontSize) : UIFont(name: "SFProDisplay-HeavyItalic", size: timerFontSize)
+        let theFont = useBold ? HeavyItalicFont : UltraLightFont
         
         displayHour?.font = theFont;
         displayMinutes?.font = theFont;
@@ -195,11 +194,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     
     func setMeridiemFont()
     {
-        if (!useBold) {
-            meridiemLabel?.font = UIFont(name: "SFProDisplay-Light", size: meridienFontSize)
-        } else {
-            meridiemLabel?.font = UIFont(name: "SFProDisplay-BoldItalic", size: meridienFontSize)
-        }
+        meridiemLabel?.font = useBold ? BoldItalicFont : LightFont
     }
     
     func resetSlider()

@@ -9,11 +9,37 @@
 import UIKit
 
 @IBDesignable
-public class SegmentedControlView: UIStackView  {
+public class SegmentedControlView: UIControl  {
     
+    var mainStackView = UIStackView()
     var buttonArray: [UIButton] = []
     
+    override init(frame: CGRect)
+    {
+        super.init(frame: frame)
+        initView()
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initView()
+    }
+    
+    func initView() -> Void {
+        addSubview(mainStackView)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        mainStackView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+    }
+    
     @IBInspectable var TextColor : UIColor = UIColor.black
+        {
+        didSet {
+            setButtonColor()
+        }
+    }
     
     @IBInspectable var SelectedIndicatorColor : UIColor = UIColor.white
         {
@@ -30,11 +56,20 @@ public class SegmentedControlView: UIStackView  {
         }
     }
     
+    
+    func setButtonColor() -> Void
+    {
+        for aButton in buttonArray
+        {
+            aButton.setTitleColor(TextColor, for: .normal)
+        }
+        
+    }
     var selectedSegmentIndex : Int = 0
     {
         didSet
         {
-            
+            self.sendActions(for: .valueChanged)
             redrawSelectionIndicators()
         }
     }
@@ -42,7 +77,7 @@ public class SegmentedControlView: UIStackView  {
     func redrawSelectionIndicators() -> Void
     {
         var i = 0
-        for aSubview in arrangedSubviews
+        for aSubview in mainStackView.arrangedSubviews
         {
             if let stackView = aSubview as? UIStackView
             {
@@ -52,22 +87,34 @@ public class SegmentedControlView: UIStackView  {
             }
         }
     }
+    
+    var SegmentFonts : [UIFont] = [LightFont!, LightFont!]
+    {
+        didSet
+        {
+            var i = 0
+            for aButton in buttonArray {
+                aButton.titleLabel?.font = SegmentFonts[i]
+                i += 1
+            }
+        }
+    }
     @IBInspectable var SegmentTitles : String = ""
         {
         didSet
         {
             let newSegmentTitles = SegmentTitles.components(separatedBy: ";")
-            distribution = .fillEqually
-            alignment = .top
+            mainStackView.distribution = .fillEqually
+            mainStackView.alignment = .top
             self.buttonArray.removeAll()
-            for subView in self.subviews
+            for subView in mainStackView.subviews
             {
-                removeArrangedSubview(subView)
+                mainStackView.removeArrangedSubview(subView)
             }
             
             for title in newSegmentTitles
             {
-                addArrangedSubview(CreateSubView(Title: title))
+                mainStackView.addArrangedSubview(CreateSubView(Title: title))
             }
             
             selectedSegmentIndex = 0

@@ -104,7 +104,7 @@
                         <outlet property="settingsSlider" destination="c6i-VC-T9y" id="wQG-dl-cWC"/>
                         <outlet property="settingsSliderTrack" destination="f1n-75-oFQ" id="ohS-0K-ifp"/>
                         <outlet property="tapViewRecognizer" destination="L2P-5L-MFT" id="849-nh-bU7"/>
-                        <segue destination="mns-gD-yk1" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" id="jXF-hA-fYf"/>
+                        <segue destination="mns-gD-yk1" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="jXF-hA-fYf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,14 +165,17 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                <color key="value" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="SegmentTitles" value="Plain;Bold"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="SegmentTitles" value="A;A"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="SelectedIndicatorColor">
                                                 <color key="value" red="0.90588235289999997" green="0.5450980392" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="TextColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fontIndicatorValueChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="DVq-rT-iR2"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdV-dm-xce">
                                         <rect key="frame" x="0.0" y="237.5" width="138" height="79"/>
@@ -212,6 +215,7 @@
                     <connections>
                         <outlet property="FontStyleControl" destination="YA6-cv-1lT" id="7Wj-ca-VTa"/>
                         <outlet property="MilitaryTimeControl" destination="5Q8-cV-jNP" id="XWd-qN-JmU"/>
+                        <outlet property="ReturnButton" destination="Bjl-GZ-6LE" id="kHW-Jz-d9E"/>
                         <outlet property="versionLabel" destination="ctZ-J6-yuG" id="TG1-lX-Xgm"/>
                     </connections>
                 </viewController>

@@ -29,17 +29,33 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
         }
     }
     
+    @IBAction func fontIndicatorValueChanged(_ sender: SegmentedControlView) {
+        setControlFonts(segmentCtrl: FontStyleControl)
+        
+    }
+    
+    func setControlFonts(segmentCtrl : SegmentedControlView)
+    {
+        let font = segmentCtrl.selectedSegmentIndex == 0 ? LightFont! : BoldItalicFont!
+        
+        
+        MilitaryTimeControl?.SegmentFonts = [ font, font]
+        ReturnButton?.titleLabel?.font = font
+    }
     @IBOutlet weak var FontStyleControl: SegmentedControlView!
         {
         didSet
         {
             FontStyleControl.selectedSegmentIndex = useBold ? 1:0;
+            setControlFonts(segmentCtrl: FontStyleControl)
+            FontStyleControl.SegmentFonts  = [ LightFont!, BoldItalicFont! ]
         }
     }
     @IBOutlet weak var MilitaryTimeControl: SegmentedControlView! {
         didSet
         {
             MilitaryTimeControl.selectedSegmentIndex = is24HourMode ? 1 : 0;
+            setControlFonts(segmentCtrl: FontStyleControl)
         }
     }
     
@@ -57,6 +73,12 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
         self.useBold = Configuration.UseBold;
     }
     
+    @IBOutlet weak var ReturnButton: UIButton! {
+        didSet
+        {
+            setControlFonts(segmentCtrl: FontStyleControl)
+        }
+    }
     @IBAction func onAcceptSettings(_ sender: Any) {
         performSegue(withIdentifier: "ClockSegue", sender: self)
         

@@ -25,7 +25,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         }
     }
     
-   
+    
     @IBOutlet weak var settingsSliderTrack: SettingsSliderTrack!
     @IBOutlet weak var tapViewRecognizer: UITapGestureRecognizer!
         {
@@ -60,7 +60,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
             self.settingsSliderTrack.layer.removeAllAnimations()
             UIView.animate(withDuration: 0.25,
                            delay: 0,
-                           options: UIView.AnimationOptions.allowUserInteraction,
+                           options: [UIView.AnimationOptions.allowUserInteraction, UIView.AnimationOptions.beginFromCurrentState],
                            animations: {
                             self.settingsSliderTrack.alpha = 0
                             self.settingsSlider.alpha = 0
@@ -92,9 +92,10 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     }
     
     @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
-        
-        fadeIn(fadeInCompletion: nil)
-        
+        if (gesture.state == UIGestureRecognizer.State.began)
+        {
+            fadeIn(fadeInCompletion: nil)
+        }
         let buttonHeight = settingsSlider.frame.size.width / 2
         
         var yPos = max(gesture.location(in: SliderView).y, 0) + buttonHeight
@@ -104,7 +105,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         {
             UIView.animate(withDuration: 1,
                            delay: 0,
-                           options: UIView.AnimationOptions.allowUserInteraction,
+                           options: [UIView.AnimationOptions.allowUserInteraction, UIView.AnimationOptions.beginFromCurrentState],
                            animations: {
                             self.settingsSlider.image = UIImage(named: "SettingsSliderComplete")
                             self.settingsSliderTrack.onSwiped()
@@ -126,7 +127,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     {
         UIView.animate(withDuration: 0.25,
                        delay: 0,
-                       options: UIView.AnimationOptions.allowUserInteraction,
+                       options: [ UIView.AnimationOptions.allowUserInteraction, UIView.AnimationOptions.beginFromCurrentState ],
                        animations: {
                         self.settingsSliderTrack.alpha = 1.0
                         self.settingsSlider.alpha = 1.0
@@ -139,7 +140,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     {
         UIView.animate(withDuration: 3.0,
                        delay: 0,
-                       options: UIView.AnimationOptions.allowUserInteraction,
+                       options: [ UIView.AnimationOptions.allowUserInteraction, UIView.AnimationOptions.beginFromCurrentState],
                        animations: {
                         self.settingsSliderTrack.alpha = 0
                         self.settingsSlider.alpha = 0

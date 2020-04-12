@@ -47,17 +47,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-qP-qB4" userLabel="Slider View">
-                                <rect key="frame" x="177" y="56" width="60" height="184"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-qP-qB4" userLabel="Slider View">
+                                <rect key="frame" x="177" y="56" width="60" height="164"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
-                                        <rect key="frame" x="0.0" y="124" width="60" height="60"/>
+                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
+                                        <rect key="frame" x="0.0" y="104" width="60" height="60"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                         </accessibility>
                                     </imageView>
-                                    <view alpha="0.0" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Odj-T9-KRD" customClass="SettingsSliderTrack" customModule="Now__Desk_Clock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="184"/>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odj-T9-KRD" customClass="SettingsSliderTrack" customModule="Now__Desk_Clock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="164"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -69,6 +69,7 @@
                                     <constraint firstItem="Odj-T9-KRD" firstAttribute="width" secondItem="Jxx-qP-qB4" secondAttribute="width" id="0vX-hs-FZ8"/>
                                     <constraint firstItem="Odj-T9-KRD" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="BuT-M5-Rca"/>
                                     <constraint firstItem="Odj-T9-KRD" firstAttribute="height" secondItem="Jxx-qP-qB4" secondAttribute="height" id="baN-52-lFS"/>
+                                    <constraint firstAttribute="height" constant="164" id="epx-np-Xe9"/>
                                     <constraint firstItem="c6i-VC-T9y" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="hg3-Yc-ANZ"/>
                                     <constraint firstItem="c6i-VC-T9y" firstAttribute="width" secondItem="Jxx-qP-qB4" secondAttribute="width" id="iWr-NY-RYs"/>
                                     <constraint firstItem="c6i-VC-T9y" firstAttribute="bottom" secondItem="Odj-T9-KRD" secondAttribute="bottom" id="nl6-dq-Yu6"/>
@@ -84,9 +85,9 @@
                             <constraint firstItem="Jxx-qP-qB4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="12f-i6-MwR"/>
                             <constraint firstItem="P0B-jh-TSa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1So-3J-i5C"/>
                             <constraint firstItem="Zqe-TT-IeH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-30" id="5eS-8U-T3l"/>
-                            <constraint firstItem="Jxx-qP-qB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.1" constant="-30" id="9Rf-3v-SOP"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="M4S-Aj-E0B"/>
                             <constraint firstItem="P0B-jh-TSa" firstAttribute="left" secondItem="Zqe-TT-IeH" secondAttribute="right" id="PNG-qz-fHI"/>
+                            <constraint firstItem="Jxx-qP-qB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.1" constant="-30" id="aez-Av-Pkh"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azB-ET-viW"/>
                             <constraint firstItem="kry-oR-0fA" firstAttribute="right" secondItem="Zqe-TT-IeH" secondAttribute="left" id="brB-lf-04P"/>
                             <constraint firstItem="kry-oR-0fA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kok-bC-wfl"/>

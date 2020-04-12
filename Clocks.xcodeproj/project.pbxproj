@@ -22,6 +22,7 @@
 		D63E2EC72426B50900BAE427 /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */; };
 		D63E2EC92426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */; };
 		D68E5B252442680900E50CA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E5B242442680900E50CA0 /* Constants.swift */; };
+		D68E5B2B24427AEE00E50CA0 /* SettingsSliderTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E5B2A24427AEE00E50CA0 /* SettingsSliderTrack.swift */; };
 		D69E3367243148F2005BD715 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E3366243148F2005BD715 /* SegmentedControlView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-HeavyItalic.otf"; sourceTree = "<group>"; };
 		D68E5B242442680900E50CA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D68E5B2A24427AEE00E50CA0 /* SettingsSliderTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSliderTrack.swift; sourceTree = "<group>"; };
 		D69E3366243148F2005BD715 /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				D69E3366243148F2005BD715 /* SegmentedControlView.swift */,
+				D68E5B2A24427AEE00E50CA0 /* SettingsSliderTrack.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				D6283F0B2411ECCD00A3CD20 /* ClockConfiguration.swift in Sources */,
 				D69E3367243148F2005BD715 /* SegmentedControlView.swift in Sources */,
 				D612E756240F53B500002A61 /* SettingsViewController.swift in Sources */,
+				D68E5B2B24427AEE00E50CA0 /* SettingsSliderTrack.swift in Sources */,
 				D626DF5A23DD2D09005B91C9 /* SceneDelegate.swift in Sources */,
 				D68E5B252442680900E50CA0 /* Constants.swift in Sources */,
 			);
@@ -342,6 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6F5PY254A2;
 				INFOPLIST_FILE = Clocks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -349,7 +354,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4;
+				MARKETING_VERSION = 0.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -364,6 +369,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6F5PY254A2;
 				INFOPLIST_FILE = Clocks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -371,7 +377,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4;
+				MARKETING_VERSION = 0.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";

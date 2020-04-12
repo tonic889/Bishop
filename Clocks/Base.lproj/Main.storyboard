@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-TT-IeH" userLabel="Display Time Separator">
-                                <rect key="frame" x="162.5" y="301.5" width="29" height="143.5"/>
+                                <rect key="frame" x="162.5" y="309.5" width="29" height="143.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -47,29 +47,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-qP-qB4" userLabel="Slider View">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-qP-qB4" userLabel="Slider View">
                                 <rect key="frame" x="177" y="56" width="60" height="184"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
+                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
                                         <rect key="frame" x="0.0" y="124" width="60" height="60"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                         </accessibility>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsSliderTrack" translatesAutoresizingMaskIntoConstraints="NO" id="f1n-75-oFQ">
+                                    <view alpha="0.0" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Odj-T9-KRD" customClass="SettingsSliderTrack" customModule="Now__Desk_Clock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="184"/>
-                                        <gestureRecognizers/>
-                                    </imageView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="f1n-75-oFQ" secondAttribute="width" id="Nd3-vd-qwU"/>
-                                    <constraint firstItem="c6i-VC-T9y" firstAttribute="bottom" secondItem="f1n-75-oFQ" secondAttribute="bottom" id="Phy-9p-ium"/>
+                                    <constraint firstItem="Odj-T9-KRD" firstAttribute="centerY" secondItem="Jxx-qP-qB4" secondAttribute="centerY" id="0Ca-Nw-nC4"/>
+                                    <constraint firstItem="Odj-T9-KRD" firstAttribute="width" secondItem="Jxx-qP-qB4" secondAttribute="width" id="0vX-hs-FZ8"/>
+                                    <constraint firstItem="Odj-T9-KRD" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="BuT-M5-Rca"/>
+                                    <constraint firstItem="Odj-T9-KRD" firstAttribute="height" secondItem="Jxx-qP-qB4" secondAttribute="height" id="baN-52-lFS"/>
                                     <constraint firstItem="c6i-VC-T9y" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="hg3-Yc-ANZ"/>
-                                    <constraint firstItem="f1n-75-oFQ" firstAttribute="centerY" secondItem="Jxx-qP-qB4" secondAttribute="centerY" id="mAx-E4-db5"/>
-                                    <constraint firstAttribute="height" secondItem="f1n-75-oFQ" secondAttribute="height" id="ngM-wF-VQA"/>
-                                    <constraint firstItem="f1n-75-oFQ" firstAttribute="centerX" secondItem="Jxx-qP-qB4" secondAttribute="centerX" id="qKQ-yf-Umd"/>
+                                    <constraint firstItem="c6i-VC-T9y" firstAttribute="width" secondItem="Jxx-qP-qB4" secondAttribute="width" id="iWr-NY-RYs"/>
+                                    <constraint firstItem="c6i-VC-T9y" firstAttribute="bottom" secondItem="Odj-T9-KRD" secondAttribute="bottom" id="nl6-dq-Yu6"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="XTp-G7-Mxx" appends="YES" id="Cgx-EH-5UN"/>
@@ -88,7 +90,7 @@
                             <constraint firstItem="gFS-4y-gje" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azB-ET-viW"/>
                             <constraint firstItem="kry-oR-0fA" firstAttribute="right" secondItem="Zqe-TT-IeH" secondAttribute="left" id="brB-lf-04P"/>
                             <constraint firstItem="kry-oR-0fA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kok-bC-wfl"/>
-                            <constraint firstItem="gFS-4y-gje" firstAttribute="top" secondItem="Zqe-TT-IeH" secondAttribute="bottom" constant="8" id="vjS-yC-cPz"/>
+                            <constraint firstItem="Zqe-TT-IeH" firstAttribute="bottom" secondItem="gFS-4y-gje" secondAttribute="top" id="vjS-yC-cPz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -96,13 +98,14 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="SettingsSliderTrack" destination="Odj-T9-KRD" id="DwJ-4k-yOj"/>
                         <outlet property="SliderView" destination="Jxx-qP-qB4" id="wzY-TT-LOi"/>
                         <outlet property="displayHour" destination="kry-oR-0fA" id="y1W-dP-VSW"/>
                         <outlet property="displayMinutes" destination="P0B-jh-TSa" id="nxT-oM-2CB"/>
                         <outlet property="displayTimeSeparator" destination="Zqe-TT-IeH" id="gk2-91-Zew"/>
                         <outlet property="meridiemLabel" destination="gFS-4y-gje" id="p2F-26-III"/>
                         <outlet property="settingsSlider" destination="c6i-VC-T9y" id="wQG-dl-cWC"/>
-                        <outlet property="settingsSliderTrack" destination="f1n-75-oFQ" id="ohS-0K-ifp"/>
+                        <outlet property="settingsSliderTrack" destination="Odj-T9-KRD" id="tpp-bv-bCB"/>
                         <outlet property="tapViewRecognizer" destination="L2P-5L-MFT" id="849-nh-bU7"/>
                         <segue destination="mns-gD-yk1" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="jXF-hA-fYf"/>
                     </connections>
@@ -229,6 +232,5 @@
         <image name="SettingsConfirm" width="60" height="60"/>
         <image name="SettingsScreen" width="41" height="41"/>
         <image name="SettingsSlider" width="60" height="60"/>
-        <image name="SettingsSliderTrack" width="60" height="184"/>
     </resources>
 </document>

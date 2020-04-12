@@ -25,8 +25,8 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
         }
     }
     
-    @IBOutlet weak var settingsSliderTrack: UIImageView!
-    
+   
+    @IBOutlet weak var settingsSliderTrack: SettingsSliderTrack!
     @IBOutlet weak var tapViewRecognizer: UITapGestureRecognizer!
         {
         didSet
@@ -107,6 +107,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
                            options: UIView.AnimationOptions.allowUserInteraction,
                            animations: {
                             self.settingsSlider.image = UIImage(named: "SettingsSliderComplete")
+                            self.settingsSliderTrack.onSwiped()
             }
                 , completion: { (finished) in
                     self.performSegue(withIdentifier: "SettingsSegue", sender: self)
@@ -223,6 +224,7 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     @IBAction func myUnwindAction(_ segue: UIStoryboardSegue)
     {
         updateDisplayDate();
+        settingsSliderTrack.setNeedsDisplay()
     }
 }
 

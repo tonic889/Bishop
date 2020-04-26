@@ -10,6 +10,9 @@
         <array key="SF-Pro-Display-Light.otf">
             <string>SFProDisplay-Light</string>
         </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
         <array key="SF-Pro-Display-Ultralight.otf">
             <string>SFProDisplay-Ultralight</string>
         </array>
@@ -23,26 +26,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kry-oR-0fA" userLabel="Display Hour">
-                                <rect key="frame" x="52.5" y="309.5" width="110" height="143.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-TT-IeH" userLabel="Display Time Separator">
+                                <rect key="frame" x="0.0" y="318.5" width="414" height="144"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-TT-IeH" userLabel="Display Time Separator">
-                                <rect key="frame" x="162.5" y="309.5" width="29" height="143.5"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0B-jh-TSa" userLabel="Display Minutes">
-                                <rect key="frame" x="191.5" y="309.5" width="138.5" height="143.5"/>
-                                <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-4y-gje" userLabel="Meridiem Label">
-                                <rect key="frame" x="171" y="453" width="36" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-4y-gje" userLabel="Meridiem Label">
+                                <rect key="frame" x="145" y="453" width="62" height="47"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -83,15 +75,12 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Jxx-qP-qB4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="12f-i6-MwR"/>
-                            <constraint firstItem="P0B-jh-TSa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1So-3J-i5C"/>
-                            <constraint firstItem="Zqe-TT-IeH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-30" id="5eS-8U-T3l"/>
+                            <constraint firstItem="Zqe-TT-IeH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5eS-8U-T3l"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="M4S-Aj-E0B"/>
-                            <constraint firstItem="P0B-jh-TSa" firstAttribute="left" secondItem="Zqe-TT-IeH" secondAttribute="right" id="PNG-qz-fHI"/>
+                            <constraint firstItem="Zqe-TT-IeH" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Rjn-uy-qn4"/>
                             <constraint firstItem="Jxx-qP-qB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.1" constant="-30" id="aez-Av-Pkh"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azB-ET-viW"/>
-                            <constraint firstItem="kry-oR-0fA" firstAttribute="right" secondItem="Zqe-TT-IeH" secondAttribute="left" id="brB-lf-04P"/>
-                            <constraint firstItem="kry-oR-0fA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kok-bC-wfl"/>
-                            <constraint firstItem="Zqe-TT-IeH" firstAttribute="bottom" secondItem="gFS-4y-gje" secondAttribute="top" id="vjS-yC-cPz"/>
+                            <constraint firstItem="Zqe-TT-IeH" firstAttribute="firstBaseline" secondItem="gFS-4y-gje" secondAttribute="top" constant="-20" id="vjS-yC-cPz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -101,8 +90,6 @@
                     <connections>
                         <outlet property="SettingsSliderTrack" destination="Odj-T9-KRD" id="DwJ-4k-yOj"/>
                         <outlet property="SliderView" destination="Jxx-qP-qB4" id="wzY-TT-LOi"/>
-                        <outlet property="displayHour" destination="kry-oR-0fA" id="y1W-dP-VSW"/>
-                        <outlet property="displayMinutes" destination="P0B-jh-TSa" id="nxT-oM-2CB"/>
                         <outlet property="displayTimeSeparator" destination="Zqe-TT-IeH" id="gk2-91-Zew"/>
                         <outlet property="meridiemLabel" destination="gFS-4y-gje" id="p2F-26-III"/>
                         <outlet property="settingsSlider" destination="c6i-VC-T9y" id="wQG-dl-cWC"/>
@@ -137,9 +124,33 @@
                                 <rect key="frame" x="186.5" y="65.5" width="41" height="41"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-J6-yuG">
-                                <rect key="frame" x="184.5" y="833" width="45.5" height="29"/>
+                                <rect key="frame" x="184.5" y="617.5" width="45.5" height="29"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chris Rugen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA7-Jp-9KU">
+                                <rect key="frame" x="43.5" y="833" width="120.5" height="29"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESIGN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWP-ca-c0A">
+                                <rect key="frame" x="61" y="804" width="85.5" height="29"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brian Cooke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUr-KX-sAd">
+                                <rect key="frame" x="252.5" y="833" width="119" height="29"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssI-cX-nEv">
+                                <rect key="frame" x="279.5" y="804" width="65" height="29"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-Tv-3Cq">
@@ -190,7 +201,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-GZ-6LE">
                                 <rect key="frame" x="103.5" y="423" width="207" height="60"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
-                                <inset key="titleEdgeInsets" minX="25" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Return to Clock" image="SettingsConfirm"/>
                                 <connections>
                                     <action selector="onAcceptSettings:" destination="mns-gD-yk1" eventType="touchUpInside" id="Mbb-gp-0DC"/>
@@ -201,15 +211,23 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="eWP-ca-c0A" firstAttribute="centerX" secondItem="LA7-Jp-9KU" secondAttribute="centerX" id="13C-DR-ctX"/>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.1" id="17E-u6-9gk"/>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="3D0-xS-YS2"/>
                             <constraint firstItem="TdH-Tv-3Cq" firstAttribute="bottom" secondItem="Bjl-GZ-6LE" secondAttribute="top" id="6TV-II-eXM"/>
+                            <constraint firstItem="LA7-Jp-9KU" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" multiplier="0.5" id="92c-Mh-NZ2"/>
                             <constraint firstItem="ctZ-J6-yuG" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="EuY-hY-H3i"/>
+                            <constraint firstItem="ssI-cX-nEv" firstAttribute="bottom" secondItem="ZUr-KX-sAd" secondAttribute="top" id="H43-cw-n6W"/>
+                            <constraint firstItem="eWP-ca-c0A" firstAttribute="bottom" secondItem="LA7-Jp-9KU" secondAttribute="top" id="HpI-4H-Iro"/>
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="IHn-he-L6C"/>
+                            <constraint firstItem="LA7-Jp-9KU" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="KIt-JY-kmH"/>
+                            <constraint firstItem="ZUr-KX-sAd" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" multiplier="1.5" constant="1.5" id="L9Z-fJ-VqH"/>
                             <constraint firstItem="TdH-Tv-3Cq" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="0.333333" id="MNv-9X-cKN"/>
+                            <constraint firstItem="ZUr-KX-sAd" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="OQ8-st-FmL"/>
                             <constraint firstItem="TdH-Tv-3Cq" firstAttribute="top" secondItem="SzR-Cc-jfa" secondAttribute="bottom" id="P1x-lg-3x3"/>
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="0.5" id="eUa-bG-J0y"/>
-                            <constraint firstItem="ctZ-J6-yuG" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="iaN-dx-1qy"/>
+                            <constraint firstItem="ssI-cX-nEv" firstAttribute="centerX" secondItem="ZUr-KX-sAd" secondAttribute="centerX" id="grF-PU-C10"/>
+                            <constraint firstItem="ctZ-J6-yuG" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.75" id="iaN-dx-1qy"/>
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="centerY" id="wUt-v6-yww"/>
                             <constraint firstItem="TdH-Tv-3Cq" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="zMJ-eG-cQI"/>
                         </constraints>

@@ -76,6 +76,7 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
     @IBOutlet weak var ReturnButton: UIButton! {
         didSet
         {
+            ReturnButton.centerVertically()
             setControlFonts(segmentCtrl: FontStyleControl)
         }
     }
@@ -84,5 +85,40 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
         
     }
     
+    
+}
+
+extension UIButton {
+    
+    func centerVertically(padding: CGFloat = 6.0) {
+        guard
+            let imageViewSize = self.imageView?.frame.size,
+            let titleLabelSize = self.titleLabel?.frame.size else {
+                return
+        }
+        
+        let totalHeight = imageViewSize.height + titleLabelSize.height + padding
+        
+        self.imageEdgeInsets = UIEdgeInsets(
+            top: -(totalHeight - imageViewSize.height),
+            left: 0.0,
+            bottom: 0.0,
+            right: -self.frame.size.width + imageViewSize.width
+        )
+        
+        self.titleEdgeInsets = UIEdgeInsets(
+            top: -titleLabelSize.height / 2, // 0.0,
+            left: -imageViewSize.width,
+            bottom: -(totalHeight - titleLabelSize.height),
+            right: 0.0
+        )
+        
+        self.contentEdgeInsets = UIEdgeInsets(
+            top: 0.0,
+            left: 0.0,
+            bottom: 0.0, //titleLabelSize.height,
+            right: 0.0
+        )
+    }
     
 }

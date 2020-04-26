@@ -21,6 +21,7 @@
 		D63E2EC52426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC42426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf */; };
 		D63E2EC72426B50900BAE427 /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */; };
 		D63E2EC92426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */; };
+		D64111902455418B00F3AC38 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D641118F2455418B00F3AC38 /* SF-Pro-Display-Semibold.otf */; };
 		D68E5B252442680900E50CA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E5B242442680900E50CA0 /* Constants.swift */; };
 		D68E5B2B24427AEE00E50CA0 /* SettingsSliderTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E5B2A24427AEE00E50CA0 /* SettingsSliderTrack.swift */; };
 		D69E3367243148F2005BD715 /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69E3366243148F2005BD715 /* SegmentedControlView.swift */; };
@@ -43,6 +44,7 @@
 		D63E2EC42426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
 		D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-HeavyItalic.otf"; sourceTree = "<group>"; };
+		D641118F2455418B00F3AC38 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		D68E5B242442680900E50CA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D68E5B2A24427AEE00E50CA0 /* SettingsSliderTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSliderTrack.swift; sourceTree = "<group>"; };
 		D69E3366243148F2005BD715 /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				D63E2EC42426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf */,
+				D641118F2455418B00F3AC38 /* SF-Pro-Display-Semibold.otf */,
 				D63E2EC82426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf */,
 				D63E2EC62426B50900BAE427 /* SF-Pro-Display-Ultralight.otf */,
 				D63E2EC12426B4D100BAE427 /* SF-Pro-Display-Light.otf */,
@@ -174,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64111902455418B00F3AC38 /* SF-Pro-Display-Semibold.otf in Resources */,
 				D63E2EC52426B4F400BAE427 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				D626DF6423DD2D0C005B91C9 /* LaunchScreen.storyboard in Resources */,
 				D63E2EC92426B51F00BAE427 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
@@ -354,7 +358,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -377,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.2;
+				MARKETING_VERSION = 0.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";

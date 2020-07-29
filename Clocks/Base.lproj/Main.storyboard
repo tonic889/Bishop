@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,24 +23,24 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="Now__Desk_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-TT-IeH" userLabel="Display Time Separator">
-                                <rect key="frame" x="0.0" y="318.5" width="414" height="144"/>
+                                <rect key="frame" x="0.0" y="199.5" width="375" height="140"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-4y-gje" userLabel="Meridiem Label">
-                                <rect key="frame" x="145" y="453" width="62" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-4y-gje" userLabel="Meridiem Label">
+                                <rect key="frame" x="149.5" y="333.5" width="38" height="30"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-qP-qB4" userLabel="Slider View">
-                                <rect key="frame" x="177" y="56" width="60" height="164"/>
+                                <rect key="frame" x="157.5" y="36.5" width="60" height="164"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
                                         <rect key="frame" x="0.0" y="104" width="60" height="60"/>
@@ -76,13 +76,41 @@
                         <constraints>
                             <constraint firstItem="Jxx-qP-qB4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="12f-i6-MwR"/>
                             <constraint firstItem="Zqe-TT-IeH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5eS-8U-T3l"/>
+                            <constraint firstItem="Jxx-qP-qB4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="GvB-ti-pLJ"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="M4S-Aj-E0B"/>
                             <constraint firstItem="Zqe-TT-IeH" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Rjn-uy-qn4"/>
+                            <constraint firstItem="Jxx-qP-qB4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZbU-ee-Jx9"/>
                             <constraint firstItem="Jxx-qP-qB4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.1" constant="-30" id="aez-Av-Pkh"/>
                             <constraint firstItem="gFS-4y-gje" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="azB-ET-viW"/>
                             <constraint firstItem="Zqe-TT-IeH" firstAttribute="firstBaseline" secondItem="gFS-4y-gje" secondAttribute="top" constant="-20" id="vjS-yC-cPz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZbU-ee-Jx9"/>
+                                <exclude reference="12f-i6-MwR"/>
+                                <exclude reference="GvB-ti-pLJ"/>
+                                <exclude reference="aez-Av-Pkh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="ZbU-ee-Jx9"/>
+                                <include reference="GvB-ti-pLJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="ZbU-ee-Jx9"/>
+                                <include reference="GvB-ti-pLJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="12f-i6-MwR"/>
+                                <include reference="aez-Av-Pkh"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="L2P-5L-MFT" appends="YES" id="Wc0-Qu-S3Y"/>
                         </connections>
@@ -120,11 +148,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsScreen" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-Cc-jfa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="SettingsScreen" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-Cc-jfa">
                                 <rect key="frame" x="186.5" y="65.5" width="41" height="41"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-J6-yuG">
-                                <rect key="frame" x="184.5" y="617.5" width="45.5" height="29"/>
+                                <rect key="frame" x="184.5" y="775" width="45.5" height="29"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -156,9 +184,9 @@
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-Tv-3Cq">
                                 <rect key="frame" x="138" y="106.5" width="138" height="316.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rc8-fp-o5K">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpN-iH-Wpv">
                                         <rect key="frame" x="0.0" y="0.0" width="138" height="79.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-cV-jNP" userLabel="Military Time Control" customClass="SegmentedControlView" customModule="Now__Desk_Clock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="79.5" width="138" height="79"/>
@@ -192,14 +220,14 @@
                                             <action selector="fontIndicatorValueChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="DVq-rT-iR2"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdV-dm-xce">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h21-Bd-e3h">
                                         <rect key="frame" x="0.0" y="237.5" width="138" height="79"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-GZ-6LE">
-                                <rect key="frame" x="103.5" y="423" width="207" height="60"/>
+                                <rect key="frame" x="102" y="423" width="210" height="60"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
                                 <state key="normal" title="Return to Clock" image="SettingsConfirm"/>
                                 <connections>
@@ -214,7 +242,6 @@
                             <constraint firstItem="eWP-ca-c0A" firstAttribute="centerX" secondItem="LA7-Jp-9KU" secondAttribute="centerX" id="13C-DR-ctX"/>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.1" id="17E-u6-9gk"/>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="3D0-xS-YS2"/>
-                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="bottom" secondItem="Bjl-GZ-6LE" secondAttribute="top" id="6TV-II-eXM"/>
                             <constraint firstItem="LA7-Jp-9KU" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" multiplier="0.5" id="92c-Mh-NZ2"/>
                             <constraint firstItem="ctZ-J6-yuG" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="EuY-hY-H3i"/>
                             <constraint firstItem="ssI-cX-nEv" firstAttribute="bottom" secondItem="ZUr-KX-sAd" secondAttribute="top" id="H43-cw-n6W"/>
@@ -222,16 +249,52 @@
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="IHn-he-L6C"/>
                             <constraint firstItem="LA7-Jp-9KU" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="KIt-JY-kmH"/>
                             <constraint firstItem="ZUr-KX-sAd" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" multiplier="1.5" constant="1.5" id="L9Z-fJ-VqH"/>
-                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="0.333333" id="MNv-9X-cKN"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="1:3" id="MNv-9X-cKN"/>
                             <constraint firstItem="ZUr-KX-sAd" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="OQ8-st-FmL"/>
-                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="top" secondItem="SzR-Cc-jfa" secondAttribute="bottom" id="P1x-lg-3x3"/>
+                            <constraint firstItem="SzR-Cc-jfa" firstAttribute="trailing" secondItem="aX1-RZ-pz1" secondAttribute="trailing" constant="-12" id="Q5N-jS-bB7"/>
+                            <constraint firstItem="SzR-Cc-jfa" firstAttribute="bottom" secondItem="TdH-Tv-3Cq" secondAttribute="top" id="Rkn-yx-xjf"/>
+                            <constraint firstItem="SzR-Cc-jfa" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="centerY" constant="-64" id="W4e-CG-qti"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="bottom" secondItem="Bjl-GZ-6LE" secondAttribute="top" id="YJI-wl-0ZI"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="top" secondItem="aX1-RZ-pz1" secondAttribute="top" id="aOJ-ap-lDJ"/>
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="0.5" id="eUa-bG-J0y"/>
                             <constraint firstItem="ssI-cX-nEv" firstAttribute="centerX" secondItem="ZUr-KX-sAd" secondAttribute="centerX" id="grF-PU-C10"/>
-                            <constraint firstItem="ctZ-J6-yuG" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" multiplier="0.75" id="iaN-dx-1qy"/>
+                            <constraint firstItem="ctZ-J6-yuG" firstAttribute="bottom" secondItem="eWP-ca-c0A" secondAttribute="top" id="iaN-dx-1qy"/>
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="centerY" id="wUt-v6-yww"/>
                             <constraint firstItem="TdH-Tv-3Cq" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="zMJ-eG-cQI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aX1-RZ-pz1"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aOJ-ap-lDJ"/>
+                                <exclude reference="eUa-bG-J0y"/>
+                                <exclude reference="17E-u6-9gk"/>
+                                <exclude reference="3D0-xS-YS2"/>
+                                <exclude reference="Q5N-jS-bB7"/>
+                                <exclude reference="Rkn-yx-xjf"/>
+                                <exclude reference="W4e-CG-qti"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="aOJ-ap-lDJ"/>
+                                <include reference="Q5N-jS-bB7"/>
+                                <include reference="W4e-CG-qti"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="aOJ-ap-lDJ"/>
+                                <include reference="Q5N-jS-bB7"/>
+                                <include reference="W4e-CG-qti"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="17E-u6-9gk"/>
+                                <include reference="3D0-xS-YS2"/>
+                                <include reference="Rkn-yx-xjf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="7bo-7F-E9l"/>
                     <connections>

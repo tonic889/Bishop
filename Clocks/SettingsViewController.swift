@@ -90,7 +90,7 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
 
 extension UIButton {
     
-    func centerVertically(padding: CGFloat = 6.0) {
+    func centerVertically(padding: CGFloat = 20.0) {
         guard
             let imageViewSize = self.imageView?.frame.size,
             let titleLabelSize = self.titleLabel?.frame.size else {
@@ -100,14 +100,14 @@ extension UIButton {
         let totalHeight = imageViewSize.height + titleLabelSize.height + padding
         
         self.imageEdgeInsets = UIEdgeInsets(
-            top: -(totalHeight - imageViewSize.height),
+            top: max(0, -(totalHeight - imageViewSize.height)),
             left: 0.0,
             bottom: 0.0,
             right: -self.frame.size.width + imageViewSize.width
         )
         
         self.titleEdgeInsets = UIEdgeInsets(
-            top: -titleLabelSize.height / 2, // 0.0,
+            top: 0.0,
             left: -imageViewSize.width,
             bottom: -(totalHeight - titleLabelSize.height),
             right: 0.0
@@ -116,9 +116,10 @@ extension UIButton {
         self.contentEdgeInsets = UIEdgeInsets(
             top: 0.0,
             left: 0.0,
-            bottom: 0.0, //titleLabelSize.height,
+            bottom: titleLabelSize.height,
             right: 0.0
         )
     }
     
+  
 }

@@ -358,7 +358,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.3;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -381,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.3;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";

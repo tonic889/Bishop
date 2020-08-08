@@ -15,7 +15,12 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     var formatter = DateFormatter();
     var useBold = false;
     
-    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        get
+        {
+            return true;
+        }
+    }
     @IBOutlet weak var SliderView: UIView!
     @IBOutlet weak var displayTimeSeparator: UILabel!
         {
@@ -46,19 +51,31 @@ class ClockViewController : ViewController, ClockConfigurableProtocol
     }
     
     @IBAction func tapGesture(_ sender: Any) {
-        toggleSliderVisibility(visibility: self.settingsSlider.alpha < 1.0)
+        toggleSliderVisibility(visibility: self.SliderView.alpha < 1.0)
     }
     
     func toggleSliderVisibility(visibility : Bool) {
         let desiredAlpha = visibility ? CGFloat(1.0) : CGFloat(0.0);
-        UIView.animate(withDuration: 0.25,
+        UIView.animate(withDuration: 1.5,
                        delay: 0,
                        options: [UIView.AnimationOptions.allowUserInteraction, UIView.AnimationOptions.beginFromCurrentState],
                        animations: {
-                        self.settingsSliderTrack.alpha = desiredAlpha
-                        self.settingsSlider.alpha = desiredAlpha
-        })
+                        self.SliderView.alpha = desiredAlpha
+    }, completion: visibility ?
+        { (finished: Bool) in
+    UIView.animate(withDuration: 2.0,
+                      delay: 0,
+                        options: [UIView.AnimationOptions.allowUserInteraction, UIView.AnimationOptions.beginFromCurrentState],
+                      animations: {
+                        self.SliderView.alpha = 0
+                      }
+    
+    );
     }
+    : nil
+        );
+    }
+    
     @IBOutlet weak var settingsSlider: UIImageView!
         {
         didSet

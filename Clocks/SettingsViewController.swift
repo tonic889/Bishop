@@ -34,6 +34,20 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
         
     }
     
+    @IBOutlet weak var CodeLabel: UILabel!
+    {
+        didSet
+        {
+            CodeLabel.font = CodeLabel.font.smallCapsFont();
+        }
+    }
+    @IBOutlet weak var DesignLabel: UILabel!
+    {
+        didSet
+        {
+            DesignLabel.font = DesignLabel.font.smallCapsFont();
+        }
+    }
     func setControlFonts(segmentCtrl : SegmentedControlView)
     {
         let font = segmentCtrl.selectedSegmentIndex == 0 ? LightFont! : BoldItalicFont!
@@ -41,6 +55,7 @@ class SettingsViewController: UIViewController, ClockConfigurableProtocol {
         
         MilitaryTimeControl?.SegmentFonts = [ font, font]
         ReturnButton?.titleLabel?.font = font
+        ReturnButton?.centerVertically()
     }
     @IBOutlet weak var FontStyleControl: SegmentedControlView!
         {
@@ -97,7 +112,7 @@ extension UIButton {
                 return
         }
         
-        let totalHeight = imageViewSize.height + titleLabelSize.height + padding
+        let totalHeight = imageViewSize.height + titleLabelSize.height + padding * 2.5
         
         self.imageEdgeInsets = UIEdgeInsets(
             top: max(0, -(totalHeight - imageViewSize.height)),
@@ -122,4 +137,31 @@ extension UIButton {
     }
     
   
+}
+
+
+extension UIFont {
+    
+    func smallCapsFont() -> UIFont {
+        let descriptor = self.fontDescriptor
+        
+        let smallLettersToSmallCapsAttribute: [UIFontDescriptor.FeatureKey: Int] = [
+            .featureIdentifier: kLowerCaseType,
+            .typeIdentifier: kLowerCaseSmallCapsSelector ]
+        
+        let capitalLettersToSmallCapsAttribute: [UIFontDescriptor.FeatureKey: Int] = [
+            .featureIdentifier: kUpperCaseType,
+            .typeIdentifier: kUpperCaseSmallCapsSelector ]
+        
+        let newDescriptor = descriptor.addingAttributes([
+            .featureSettings: [
+                smallLettersToSmallCapsAttribute,
+                capitalLettersToSmallCapsAttribute
+            ]
+        ])
+        
+        return UIFont(descriptor: newDescriptor, size: self.pointSize)
+        
+    }
+
 }

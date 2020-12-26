@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="landscape" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,33 +23,33 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ClockViewController" customModule="Now__Desk_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-TT-IeH" userLabel="Display Time Separator">
-                                <rect key="frame" x="44" y="62.333333333333329" width="808" height="143.66666666666669"/>
+                                <rect key="frame" x="0.0" y="538.5" width="1024" height="143.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Ultralight" family="SF Pro Display" pointSize="120"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-4y-gje" userLabel="Meridiem Label">
-                                <rect key="frame" x="412" y="196.66666666666666" width="36" height="30"/>
+                                <rect key="frame" x="476" y="673" width="36" height="30"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxx-qP-qB4" userLabel="Slider View">
-                                <rect key="frame" x="732" y="114.66666666666669" width="120" height="164"/>
+                                <rect key="frame" x="482" y="104.5" width="60" height="164"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsSlider" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-VC-T9y">
-                                        <rect key="frame" x="0.0" y="43.999999999999986" width="120" height="120.00000000000001"/>
+                                        <rect key="frame" x="0.0" y="104" width="60" height="60"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                         </accessibility>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odj-T9-KRD" customClass="SettingsSliderTrack" customModule="Now__Desk_Clock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="164"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="164"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -94,6 +94,12 @@
                                 <exclude reference="aez-Av-Pkh"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="12f-i6-MwR"/>
+                                <include reference="aez-Av-Pkh"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="GvB-ti-pLJ"/>
@@ -104,12 +110,6 @@
                             <mask key="constraints">
                                 <include reference="GvB-ti-pLJ"/>
                                 <include reference="ZbU-ee-Jx9"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="12f-i6-MwR"/>
-                                <include reference="aez-Av-Pkh"/>
                             </mask>
                         </variation>
                         <connections>
@@ -146,47 +146,51 @@
             <objects>
                 <viewController id="mns-gD-yk1" customClass="SettingsViewController" customModule="Now__Desk_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zsf-1M-FrG">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="SettingsScreen" translatesAutoresizingMaskIntoConstraints="NO" id="SzR-Cc-jfa">
-                                <rect key="frame" x="798.66666666666663" y="111.99999999999999" width="41.333333333333371" height="41.333333333333329"/>
+                                <rect key="frame" x="491.5" y="114" width="41" height="41"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-J6-yuG">
-                                <rect key="frame" x="433" y="325.66666666666669" width="30.333333333333314" height="19.333333333333314"/>
+                                <rect key="frame" x="497" y="1278" width="30.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="16"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chris Rugen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA7-Jp-9KU">
-                                <rect key="frame" x="184" y="373.66666666666669" width="80.333333333333314" height="19.333333333333314"/>
+                                <rect key="frame" x="216" y="1326.5" width="80.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="16"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESIGN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWP-ca-c0A">
-                                <rect key="frame" x="181.33333333333334" y="345" width="85.333333333333343" height="28.666666666666686"/>
+                                <rect key="frame" x="213.5" y="1297.5" width="85.5" height="29"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brian Cooke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUr-KX-sAd">
-                                <rect key="frame" x="634" y="373.66666666666669" width="79.333333333333371" height="19.333333333333314"/>
+                                <rect key="frame" x="730" y="1326.5" width="79.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="16"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssI-cX-nEv">
-                                <rect key="frame" x="641" y="345" width="65" height="28.666666666666686"/>
+                                <rect key="frame" x="737" y="1297.5" width="65" height="29"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="24"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-Tv-3Cq">
-                                <rect key="frame" x="44" y="0.0" width="269.33333333333331" height="196.66666666666666"/>
+                                <rect key="frame" x="407" y="155" width="210" height="488"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tll-ns-aAe">
+                                        <rect key="frame" x="0.0" y="0.0" width="210" height="97.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Q8-cV-jNP" userLabel="Military Time Control" customClass="SegmentedControlView" customModule="Now__Desk_Clock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="269.33333333333331" height="65.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="97.5" width="210" height="98"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="SegmentTitles" value="12;24"/>
@@ -199,11 +203,11 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpN-iH-Wpv">
-                                        <rect key="frame" x="0.0" y="65.666666666666686" width="269.33333333333331" height="65.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="195.5" width="210" height="97.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YA6-cv-1lT" userLabel="Font Indicator Control" customClass="SegmentedControlView" customModule="Now__Desk_Clock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="131" width="269.33333333333331" height="65.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="293" width="210" height="97.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
@@ -221,10 +225,15 @@
                                             <action selector="fontIndicatorValueChanged:" destination="mns-gD-yk1" eventType="valueChanged" id="DVq-rT-iR2"/>
                                         </connections>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7T-Od-XbH">
+                                        <rect key="frame" x="0.0" y="390.5" width="210" height="97.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
+                                <variation key="heightClass=compact" alignment="center" axis="horizontal"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-GZ-6LE">
-                                <rect key="frame" x="343" y="166.66666666666666" width="210" height="60"/>
+                                <rect key="frame" x="407" y="643" width="210" height="60"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Light" family="SF Pro Display" pointSize="24"/>
                                 <state key="normal" title="Return to Clock" image="SettingsConfirm"/>
                                 <connections>
@@ -252,7 +261,7 @@
                             <constraint firstItem="TdH-Tv-3Cq" firstAttribute="leading" secondItem="aX1-RZ-pz1" secondAttribute="leading" id="JYZ-ab-Me2"/>
                             <constraint firstItem="LA7-Jp-9KU" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="KIt-JY-kmH"/>
                             <constraint firstItem="ZUr-KX-sAd" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" multiplier="1.5" constant="1.5" id="L9Z-fJ-VqH"/>
-                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="1:3" id="MNv-9X-cKN"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="width" secondItem="Bjl-GZ-6LE" secondAttribute="width" multiplier="1:1" id="MNv-9X-cKN"/>
                             <constraint firstItem="ZUr-KX-sAd" firstAttribute="bottom" secondItem="aX1-RZ-pz1" secondAttribute="bottom" id="OQ8-st-FmL"/>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="trailing" secondItem="aX1-RZ-pz1" secondAttribute="trailing" constant="-12" id="Q5N-jS-bB7"/>
                             <constraint firstItem="SzR-Cc-jfa" firstAttribute="bottom" secondItem="TdH-Tv-3Cq" secondAttribute="top" id="Rkn-yx-xjf"/>
@@ -263,31 +272,44 @@
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" multiplier="0.5" id="eUa-bG-J0y"/>
                             <constraint firstItem="ssI-cX-nEv" firstAttribute="centerX" secondItem="ZUr-KX-sAd" secondAttribute="centerX" id="grF-PU-C10"/>
                             <constraint firstItem="ctZ-J6-yuG" firstAttribute="bottom" secondItem="eWP-ca-c0A" secondAttribute="top" id="iaN-dx-1qy"/>
-                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="height" secondItem="aX1-RZ-pz1" secondAttribute="height" multiplier="1:2" id="lyK-Yi-Qhk"/>
+                            <constraint firstItem="TdH-Tv-3Cq" firstAttribute="width" secondItem="aX1-RZ-pz1" secondAttribute="width" id="lYn-QX-JPT"/>
                             <constraint firstItem="Bjl-GZ-6LE" firstAttribute="centerY" secondItem="aX1-RZ-pz1" secondAttribute="centerY" id="wUt-v6-yww"/>
                             <constraint firstItem="TdH-Tv-3Cq" firstAttribute="centerX" secondItem="aX1-RZ-pz1" secondAttribute="centerX" id="zMJ-eG-cQI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aX1-RZ-pz1"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="JYZ-ab-Me2"/>
+                                <exclude reference="MNv-9X-cKN"/>
                                 <exclude reference="WFU-Dd-3V8"/>
-                                <exclude reference="YJI-wl-0ZI"/>
                                 <exclude reference="aOJ-ap-lDJ"/>
-                                <exclude reference="lyK-Yi-Qhk"/>
-                                <exclude reference="zMJ-eG-cQI"/>
-                                <exclude reference="eUa-bG-J0y"/>
+                                <exclude reference="lYn-QX-JPT"/>
                                 <exclude reference="17E-u6-9gk"/>
                                 <exclude reference="3D0-xS-YS2"/>
                                 <exclude reference="Q5N-jS-bB7"/>
                                 <exclude reference="Rkn-yx-xjf"/>
                                 <exclude reference="W4e-CG-qti"/>
+                                <exclude reference="eUa-bG-J0y"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="aOJ-ap-lDJ"/>
+                                <include reference="lYn-QX-JPT"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="MNv-9X-cKN"/>
+                                <include reference="17E-u6-9gk"/>
+                                <include reference="3D0-xS-YS2"/>
+                                <include reference="Rkn-yx-xjf"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="JYZ-ab-Me2"/>
-                                <include reference="WFU-Dd-3V8"/>
-                                <include reference="lyK-Yi-Qhk"/>
+                                <exclude reference="WFU-Dd-3V8"/>
                                 <include reference="Q5N-jS-bB7"/>
                                 <include reference="W4e-CG-qti"/>
                             </mask>
@@ -295,20 +317,13 @@
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
                                 <include reference="JYZ-ab-Me2"/>
-                                <include reference="aOJ-ap-lDJ"/>
-                                <include reference="lyK-Yi-Qhk"/>
-                                <exclude reference="zMJ-eG-cQI"/>
                                 <include reference="Q5N-jS-bB7"/>
                                 <include reference="W4e-CG-qti"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="YJI-wl-0ZI"/>
-                                <include reference="zMJ-eG-cQI"/>
-                                <include reference="17E-u6-9gk"/>
-                                <include reference="3D0-xS-YS2"/>
-                                <include reference="Rkn-yx-xjf"/>
+                                <exclude reference="YJI-wl-0ZI"/>
                             </mask>
                         </variation>
                     </view>
@@ -330,7 +345,7 @@
     </scenes>
     <resources>
         <image name="SettingsConfirm" width="60" height="60"/>
-        <image name="SettingsScreen" width="41.333332061767578" height="41.333332061767578"/>
+        <image name="SettingsScreen" width="41" height="41"/>
         <image name="SettingsSlider" width="60" height="60"/>
     </resources>
 </document>

@@ -350,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6F5PY254A2;
 				INFOPLIST_FILE = Clocks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -358,7 +358,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.2;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -373,7 +373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6F5PY254A2;
 				INFOPLIST_FILE = Clocks/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -381,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.2;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.voodoochild.bishop;
 				PRODUCT_NAME = "Now: Desk Clock";
 				PROVISIONING_PROFILE_SPECIFIER = "";
